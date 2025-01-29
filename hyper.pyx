@@ -30,7 +30,7 @@ cpdef hypPfQ_np(double[:] a,
     b_ptr = &b[0]
     z_ptr = &z[0]
     r_ptr = &r[0]
-    hypergeometric_pFq_w_array(a_ptr, na, b_ptr, nb, z_ptr,nz,r_ptr)
+    hypergeometric_pFq_array(a_ptr, na, b_ptr, nb, z_ptr,nz,r_ptr)
 
 # def compute_hypergeometric_pFq(np.ndarray[np.double_t, ndim=1] a,
 #                                np.ndarray[np.double_t, ndim=1] b,
