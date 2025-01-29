@@ -1,0 +1,7 @@
+[build-system]
+requires = ["setuptools", "Cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hypPfQ-boost"
+version = "0.1"
