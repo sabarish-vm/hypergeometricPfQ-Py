@@ -1,0 +1,35 @@
+name: Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.10,3.11,3.12]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Micromamba
+      uses: mamba-org/setup-micromamba@v2
+      with:
+        auto-activate-base: false
+
+    - name: Install dependencies
+      run: |
+            micromamba create -n myenv python=${{ matrix.python-version }}
+            micromamba activate myenv
+            micromamba install boost
+            pip install uv
+            uv pip install numpy cython
+
+    - name: Run tests
+      run: |
+        conda activate myenv
+        pytest
