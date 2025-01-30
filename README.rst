@@ -1,3 +1,6 @@
+.. image:: https://github.com/sabarish-vm/hypergeometricPfQ-Py/actions/workflows/test.yml/badge.svg?branch=main
+  :target: https://github.com/sabarish-vm/hypergeometricPfQ-Py/actions
+
 ============
 Installation
 ============
