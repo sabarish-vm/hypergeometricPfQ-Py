@@ -4,16 +4,20 @@ Installation
 
 The wrapper needs the `BOOST <https://www.boost.org/>`_ library in the system, and ``Python.h`` file for compilation. 
 Depending on the shell-setup the paths to these libraries may already be known to the compiler. 
+It is most often easier to install BOOST using `conda-forge <https://anaconda.org/conda-forge/boost>`_. 
+``Python.h`` is available by default if you have python installed.
+``setup.py`` will try to localte this file during the compilation.
 
-.. code-block:: shell
-
-       python setup.py build_ext --inplace -v -f
-
-If the compilation is successfull you can proceed to installing the package using,
 
 .. code-block:: shell
 
     pip install -e .
+
+If the installation fails, you can debug it by running, this shows the compilation output
+
+.. code-block:: shell
+
+       python setup.py build_ext --inplace -v -f
 
 In case the compilation throws an error saying that ``Python.h`` or ``boost/math/special_functions/hypergeometric_pFq.hpp``
 is not found. There are two ways of handling this,
