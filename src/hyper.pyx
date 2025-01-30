@@ -23,11 +23,20 @@ cpdef hypPfQ_np(double[:] a,
     cdef const double* z_ptr
 
     # Initialize pointers and sizes
-    na = a.shape[0]
-    nb = b.shape[0]
+    try :
+        na = a.shape[0]
+        a_ptr = &a[0]
+    except :
+        na = 0
+        a_ptr = NULL
+    try :
+        nb = b.shape[0]
+        b_ptr = &b[0]
+    except :
+        nb = 0
+        b_ptr = NULL
+
     nz = z.shape[0]
-    a_ptr = &a[0]
-    b_ptr = &b[0]
     z_ptr = &z[0]
     r_ptr = &r[0]
     hypergeometric_pFq_array(a_ptr, na, b_ptr, nb, z_ptr,nz,r_ptr)
