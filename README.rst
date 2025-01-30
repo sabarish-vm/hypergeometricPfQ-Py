@@ -20,3 +20,18 @@ is not found. There are two ways of handling this,
 
 #. Add the paths to these libraries to the variables ``PYTHON_INCLUDE`` or ``BOOST_INCLUDE`` in the ``setup.py`` file.
 #. Add the paths to the env variable CPLUS_INCLUDE_PATH
+
+================
+Installing Boost
+================
+Boost can be installed system wide using the OS's package management system. An OS-independent solution is to install it via `homebrew <https://formulae.brew.sh/formula/boost>`_ 
+
+.. code-block:: shell
+
+       brew install boost
+
+or `conda-forge <https://anaconda.org/conda-forge/boost>`_. 
+
+.. code-block:: shell
+
+       conda install -c conda-forge boost
