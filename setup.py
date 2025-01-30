@@ -10,7 +10,7 @@ ext_modules = [
         "hypPfQ",
         sources=["hyper.pyx", "wrap.cpp"],
         language="c++",
-        extra_compile_args=["-std=c++17"],
+        extra_compile_args=["-std=c++17", "-lboost_system"],
         include_dirs=[np.get_include(), BOOST_INCLUDE, PYTHON_INCLUDE],
     )
 ]
