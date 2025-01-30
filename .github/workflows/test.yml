@@ -20,7 +20,6 @@ jobs:
       uses: mamba-org/setup-micromamba@v2
       with:
         init-shell : bash
-        auto-activate-base: false
 
     - name: Install dependencies
       run: |
